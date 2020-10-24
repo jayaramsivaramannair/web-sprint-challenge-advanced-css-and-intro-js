@@ -363,6 +363,9 @@ function getHTML(/* Code here */){
 /* 💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪
 Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
+/*Array Randomization Algorithm SOURCE*/
+/* Javascript Implementation of array shuffling: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array */
+
 function randomize(artArray){
     for(var i = artArray.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -377,6 +380,13 @@ randomize(artists);
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
+ /*USING MAP METHOD ON THE ARTISTS ARRAY TO RETURN AN ARRAY ONLY CONTAINING ARTIST NAMES */
+let artistNames = artists.map(artist => artist.name);
+console.log(artistNames);
+
+/* USING FILTER METHOD ON THE ARTISTS ARRAY TO RETURN AN ARRAY ONLY CONTAINING ARTISTS BORN IN TWENTIETH CENTURY (born after 1900) */
+let artistBornTwentieth = artists.filter(artist => parseInt(artist.years.split(" ")[0]) > 1900);
+console.log(artistBornTwentieth);
  
  
  
