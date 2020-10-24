@@ -238,7 +238,7 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(artArray, index) {
-  return `The artist at index ${index} is ${artArray[index].name}`;
+  return `the artist at index ${index} is ${artArray[index].name}`;
 }
 
 console.log(getArtistByIndex(artists, 0));
@@ -275,7 +275,7 @@ Create a function called `removeArtist` that takes two arguments:
 */
 function removeArtist(artArray, number) {
   artArray.splice(number, 1);
-  console.log(artArray.length);
+  return artArray.length;
 }
    
 /**
@@ -292,10 +292,6 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(artObject){
-  artists.push(artObject);
-}
-
 const Jayaram = {
   id: 20,
   name: "Jayaram Nair",
@@ -304,7 +300,14 @@ const Jayaram = {
   nationality: "American",
   bio : "I am passionate about everything which falls under the umbrella of programming. I believe that there are only two ways to move our world forward which is telling good inspiring stories and writing code."
 }
+
+function addArtist(artObject){
+  artists.push(artObject);
+  return artists;
+}
+
 addArtist(Jayaram);
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Create a function called lotsOfArt() that takes one argument: 
