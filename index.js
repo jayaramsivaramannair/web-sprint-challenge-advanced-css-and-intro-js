@@ -278,7 +278,6 @@ function removeArtist(artArray, number) {
   console.log(artists.length);
 }
    
-removeArtist(artists, 0);
 /**
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -293,11 +292,19 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
-  /*Your Code Here*/
-  }
+function addArtist(artObject){
+  artists.push(artObject);
+}
 
-  
+const Jayaram = {
+  id: 20,
+  name: "Jayaram Nair",
+  years: "1984 - 2020",
+  genre: "Programmer",
+  nationality: "American",
+  bio : "I am passionate about everything which falls under the umbrella of programming. I believe that there are only two ways to move our world forward which is telling good inspiring stories and writing code."
+}
+addArtist(Jayaram);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Create a function called lotsOfArt() that takes one argument: 
