@@ -209,11 +209,23 @@ Practice accessing data above by console.log-ing following items:
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
 
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+for(let element of artists) {
+  if(element.name === "Vincent van Dough") {
+      element.name = "Vincent Van Gogh";
+  }
+}
 
+for(let element of artists) {
+  if(element.name === "Vincent Van Gogh") {
+      console.log(element);
+  }
+}
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -225,20 +237,30 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(artArray, index) {
+  return `The artist at index ${index} is ${artArray[index].name}`;
 }
 
+console.log(getArtistByIndex(artists, 0));
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(artArray){
+  let artistTwentyCentury = [];
+    for(let element of artArray) {
+        let yearsActive = element.years.split(" ");
+        let yearBirth = parseInt(yearsActive[0]);
+        let yearDeath = parseInt(yearsActive[2]);
+        if(yearBirth >= 1900 && yearDeath <= 2000) {
+            artistTwentyCentury.push(element.name);
+        }
+    }
+    return artistTwentyCentury;
 }
 
-
+console.log(get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `removeArtist` that takes two arguments:
